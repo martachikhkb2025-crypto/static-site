@@ -6,7 +6,7 @@
   <title>Мій сайт</title>
   <link rel="stylesheet" href="styles.css"></head>
 <body>
-  <button id="theme-btn">🌙 Нічна тема</button>
+  <button id="theme-btn" onclick="toggleTheme()">🌙 Нічна тема</button>
 
   <h1>Чіх Марта Романівна</h1>
   <p>Контактна інформація: <a href="mailto:marta.chikh.kb.2025@lpnu.ua">marta.chikh.kb.2025@lpnu.ua</a></p>
@@ -36,18 +36,15 @@
     2023 – теперішній час
   </p>
   <script>
-    const btn = document.getElementById("theme-btn");
-
-    function updateButton() {
-      btn.textContent = document.body.classList.contains("dark")
-        ? "☀️ Світла тема"
-        : "🌙 Нічна тема";
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+    var btn = document.getElementById("theme-btn");
+    if (document.body.classList.contains("dark")) {
+      btn.textContent = "☀️ Світла тема";
+    } else {
+      btn.textContent = "🌙 Нічна тема";
     }
-
-    btn.addEventListener("click", function () {
-      document.body.classList.toggle("dark");
-      updateButton();
-    });
-  </script>
+  }
+</script>
 </body>
 </html>
