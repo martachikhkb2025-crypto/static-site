@@ -36,14 +36,13 @@
     2023 – теперішній час
   </p>
   <script>
+  var dark = false;
+
   function toggleTheme() {
-    document.body.classList.toggle("dark");
-    var btn = document.getElementById("theme-btn");
-    if (document.body.classList.contains("dark")) {
-      btn.textContent = "☀️ Світла тема";
-    } else {
-      btn.textContent = "🌙 Нічна тема";
-    }
+    dark = !dark;
+    document.body.style.backgroundColor = dark ? "#1e1e1e" : "#ffffff";
+    document.body.style.color = dark ? "#f0f0f0" : "#000000";
+    document.getElementById("theme-btn").textContent = dark ? "☀️ Світла тема" : "🌙 Нічна тема";
   }
 </script>
 </body>
